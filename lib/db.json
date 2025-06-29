@@ -1,0 +1,142 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "title": "Development",
+      "description": "Developments Courses",
+      "thumbnail": "development.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Design",
+      "description": "Design Courses",
+      "thumbnail": "design.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Marketing",
+      "description": "Marketing Courses",
+      "thumbnail": "marketing.jpg"
+    },
+    {
+      "id": 4,
+      "title": "IT & Software",
+      "description": "IT & Software Courses",
+      "thumbnail": "it_software.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Personal Development",
+      "description": "Personal Development Courses",
+      "thumbnail": "personal_development.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Business",
+      "description": "Business Courses",
+      "thumbnail": "programming.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Photography",
+      "description": "Photography Courses",
+      "thumbnail": "photography.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Music",
+      "description": "Music Courses",
+      "thumbnail": "music.jpg"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "title": "Learn Python",
+      "subtitle": "Learn Python Like a Pro",
+      "thumbnail": "python_thumbnail.png",
+      "modules": [],
+      "price": 29.99,
+      "category": {
+        "id": 1,
+        "title": "Development",
+        "description": "Developments Courses",
+        "thumbnail": "development.jpg"
+      },
+      "instructor": {
+        "id": 1,
+        "firstName": "Pter",
+        "lastName": "Josh Does",
+        "email": "datloan14081@gmail.com",
+        "role": "instructor",
+        "bio": "",
+        "profilePicture": "https://i.pravatar.cc",
+        "designation": ""
+      },
+      "testimonials": []
+    },
+    {
+      "id": 2,
+      "title": "Mastering JavaScript updated",
+      "subtitle": "Learn Javascript from the scratch",
+      "thumbnail": "learn_js_thumbnail.jpeg",
+      "modules": [],
+      "price": 56,
+      "category": {
+        "id": 7,
+        "title": "Photography",
+        "description": "Photography Courses",
+        "thumbnail": "photography.jpg"
+      },
+      "instructor": {
+        "id": 1,
+        "firstName": "Pter",
+        "lastName": "Josh Does",
+        "email": "datloan14081@gmail.com",
+        "role": "instructor",
+        "bio": "",
+        "profilePicture": "https://i.pravatar.cc",
+        "designation": ""
+      },
+      "testimonials": []
+    },
+    {
+      "id": 3,
+      "title": "Next.js 15 Full Stack Complete Learning Management System",
+      "subtitle": "subtitle",
+      "thumbnail": "Screenshot 2025-06-11 120734.png",
+      "modules": [],
+      "price": 23,
+      "category": {
+        "id": 1,
+        "title": "Development",
+        "description": "Developments Courses",
+        "thumbnail": "development.jpg"
+      },
+      "instructor": {
+        "id": 1,
+        "firstName": "Pter",
+        "lastName": "Josh Does",
+        "email": "datloan14081@gmail.com",
+        "role": "instructor",
+        "bio": "",
+        "profilePicture": "https://i.pravatar.cc",
+        "designation": ""
+      },
+      "testimonials": []
+    }
+  ],
+  "users": [
+    {
+      "email": "datloan1408@gmail.com",
+      "password": "$2a$10$G6gOkS43KOerY92d.hAOQer7AtolXXT7XLhV12XM9I9mvbU.1P6T2",
+      "profilePicture": "https://i.pravatar.cc",
+      "bio": "",
+      "phone": "",
+      "socialMedia": {},
+      "name": "Nguyễn Đạt",
+      "role": "instructor",
+      "id": 1
+    }
+  ]
+}

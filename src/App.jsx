@@ -1,11 +1,14 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
+import AppRoutes from "./routes";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
-    <div className="container mt-5">
-      <h1 className="text-primary">Hello Bootstrap in React</h1>
-      <button className="btn btn-success">Click me</button>
-    </div>
+    <>
+      <AppRoutes />
+      <ToastContainer />
+    </>
   );
 }
 
