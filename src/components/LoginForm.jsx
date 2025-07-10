@@ -1,17 +1,24 @@
-import React, { useState } from "react";
-import { Form, Button, Card, Alert, Container } from "react-bootstrap";
+import React from "react";
+import { Form, Button, Card, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { createCredentialLogin } from "../api/auth";
+import { useAuth } from "../context/AuthContext";
 export function LoginForm() {
   const navigate = useNavigate();
+  const { login } = useAuth(); 
 
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
       const formData = new FormData(event.target);
       const response = await createCredentialLogin(formData);
-      console.log("Login response. in loginform:", response);
+
+      login({
+        token: response.accessToken,
+        user: response.user,
+      });
+
       toast.success("Login successful");
       navigate("/courses");
     } catch (error) {
@@ -51,8 +58,9 @@ export function LoginForm() {
           </Form>
 
           <div className="text-center mt-3">
-            Don't have an account? <a href="/register/instructor">Instructor</a>{" "}
-            or <a href="/register/student">Student</a>
+            Don't have an account?{" "}
+            <a href="/register/instructor">Instructor</a> or{" "}
+            <a href="/register/student">Student</a>
           </div>
         </Card.Body>
       </Card>

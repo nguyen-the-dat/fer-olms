@@ -52,11 +52,12 @@
   "courses": [
     {
       "id": 1,
-      "title": "Learn Python",
+      "title": "Master Python - Updated new 2",
       "subtitle": "Learn Python Like a Pro",
-      "thumbnail": "python_thumbnail.png",
+      "thumbnail": "https://firebasestorage.googleapis.com/v0/b/indocs-e3006.appspot.com/o/courses%2F1_nlxh-200-chu-giac-mo-khong-phai-la-thu-ban-nhin-thay-khi-ngu-144146.jpg?alt=media&token=5ebecbaf-9a60-47e6-a6b2-4c58ca648206",
       "modules": [],
-      "price": 29.99,
+      "price": 19.99,
+      "active": true,
       "category": {
         "id": 1,
         "title": "Development",
@@ -64,7 +65,7 @@
         "thumbnail": "development.jpg"
       },
       "instructor": {
-        "id": 1,
+        "id": 4,
         "firstName": "Pter",
         "lastName": "Josh Does",
         "email": "datloan14081@gmail.com",
@@ -124,6 +125,37 @@
         "designation": ""
       },
       "testimonials": []
+    },
+    {
+      "title": "spring boot java course update",
+      "description": "learning spring boot course with senior dev from viettel",
+      "active": true,
+      "price": 6.9,
+      "instructor": {
+        "email": "datloan14@gmail.com",
+        "profilePicture": "https://i.pravatar.cc",
+        "bio": "",
+        "phone": "",
+        "socialMedia": {},
+        "name": "Nguyễn Đạt",
+        "role": "instructor",
+        "id": 4
+      },
+      "modules": [
+        1,
+        2,
+        3
+      ],
+      "testimonials": [],
+      "id": 4,
+      "subtitle": "advanced web development",
+      "thumbnail": "https://firebasestorage.googleapis.com/v0/b/indocs-e3006.appspot.com/o/courses%2F4_113818350_2670076123208175_188602434153509607_n.jpg?alt=media&token=c54289bc-ebeb-406c-b83a-2b43f608f479",
+      "category": {
+        "id": 4,
+        "title": "IT & Software",
+        "description": "IT & Software Courses",
+        "thumbnail": "it_software.jpg"
+      }
     }
   ],
   "users": [
@@ -137,6 +169,121 @@
       "name": "Nguyễn Đạt",
       "role": "instructor",
       "id": 1
+    },
+    {
+      "email": "datloan14081@gmail.com",
+      "password": "$2a$10$nalTHnAjJB3PaIYsM6QJoeqLEJvTd9Q7QjXVPfOmV0acFfYS3.8/O",
+      "profilePicture": "https://i.pravatar.cc",
+      "bio": "",
+      "phone": "",
+      "socialMedia": {},
+      "name": "Nguyễn Đạt",
+      "role": "student",
+      "id": 2
+    },
+    {
+      "email": "dattram@gmail.com",
+      "password": "$2a$10$AWb7xm9zXBv5u3iMJfrbAuzCRUaJsAIaxqiG5dONtz4jEvVK36NKi",
+      "profilePicture": "https://i.pravatar.cc",
+      "bio": "",
+      "phone": "",
+      "socialMedia": {},
+      "name": "Dat Trm",
+      "role": "instructor",
+      "id": 3
+    },
+    {
+      "email": "datloan14@gmail.com",
+      "password": "$2a$10$SJc9ZIDcGgL3ti2u2t3RJ.cuf7oB1.YtxAubnLpsEEUEJdw6rLDkW",
+      "profilePicture": "https://i.pravatar.cc",
+      "bio": "",
+      "phone": "",
+      "socialMedia": {},
+      "name": "Nguyễn Đạt",
+      "role": "instructor",
+      "id": 4
+    },
+    {
+      "email": "datloan14089@gmail.com",
+      "password": "$2a$10$b.UPd/seuoO.wSuHgh8EVeDURAxQFKCtLj8hwbUbl4Ek0i2.X3B8a",
+      "profilePicture": "https://i.pravatar.cc",
+      "bio": "",
+      "phone": "",
+      "socialMedia": {},
+      "name": "Nguyễn Đạt",
+      "role": "student",
+      "id": 5
+    }
+  ],
+  "modules": [
+    {
+      "title": "module 2",
+      "slug": "module-2",
+      "courseId": "4",
+      "order": 2,
+      "lessonIds": [],
+      "active": false,
+      "duration": 0,
+      "id": 1
+    },
+    {
+      "title": "module 1 update",
+      "slug": "module-1-update",
+      "courseId": "4",
+      "order": 0,
+      "lessonIds": [
+        1,
+        2,
+        3
+      ],
+      "active": true,
+      "duration": 0,
+      "id": 2
+    },
+    {
+      "title": "test module moi",
+      "slug": "test-module-moi",
+      "courseId": "4",
+      "order": 1,
+      "lessonIds": [],
+      "active": false,
+      "duration": 0,
+      "id": 3
+    }
+  ],
+  "lessons": [
+    {
+      "id": 1,
+      "title": "Introduction to Variables update",
+      "description": "Learn the basics of variables in programming update.",
+      "duration": 630,
+      "video_url": "https://example.com/variables_video",
+      "slug": "introduction-to-variables-update",
+      "access": "private",
+      "active": true,
+      "order": 0
+    },
+    {
+      "id": 2,
+      "title": "HTML Basics update 3",
+      "description": "Understand the fundamentals of HTML.",
+      "duration": 205,
+      "video_url": "https://www.youtube.com/embed/ybfq5gtvnj0?si=FQnbTJWGFzf_rnlp",
+      "slug": "html-basics-update-3",
+      "access": "private",
+      "active": true,
+      "order": 2
+    },
+    {
+      "id": 3,
+      "title": "Introduction to Machine Learning update 2",
+      "description": "Get introduced to the exciting field of machine learning.",
+      "duration": 620,
+      "video_url": "https://www.youtube.com/embed/PebLShakKCE?si=LOq-p0enj1OdIIEI",
+      "slug": "introduction-to-machine-learning-update-2",
+      "access": "private",
+      "active": true,
+      "order": 1
     }
   ]
 }

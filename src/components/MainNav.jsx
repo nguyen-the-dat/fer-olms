@@ -1,51 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
-
 import Logo from "./Logo";
 import Avatar from "./Avatar";
-import { Button } from "react-bootstrap";
-
+import { useAuth } from "../context/AuthContext";
 const MainNav = ({ items }) => {
-  const [loginSession, setLoginSession] = useState(null);
-  const [loggedInUser, setLoggedInUser] = useState(null);
-
-  useEffect(() => {
-    async function fetchMe() {
-      try {
-        const response = await fetch("/api/me");
-        const data = await response.json();
-        setLoggedInUser(data);
-        setLoginSession(true); // Giả lập phiên đăng nhập
-      } catch (error) {
-        console.error("Failed to fetch user", error);
-      }
-    }
-
-    fetchMe();
-  }, []);
-
-  const handleLogout = (e) => {
-    e.preventDefault();
-    setLoginSession(null);
-    setLoggedInUser(null);
-    // Thêm xử lý logout ở đây nếu cần
-  };
-
+  const { isAuthenticated, user, logout } = useAuth();
   return (
     <>
       <div className="d-flex gap-3 gap-lg-4">
-        <Link href="/">
+        <Link to="/">
           <Logo />
         </Link>
 
-        {/* menu : features, pricing, blogs, documentation */}
         {items?.length ? (
           <nav className="d-none d-lg-flex gap-3">
-            {items?.map((item, index) => (
+            {items.map((item, index) => (
               <Link
                 key={index}
-                href={item.disabled ? "#" : item.href}
+                to={item.disabled ? "#" : item.href}
                 className="d-flex align-items-center fs-5 fw-medium text-body text-decoration-none hover-opacity"
               >
                 {item.title}
@@ -53,15 +26,10 @@ const MainNav = ({ items }) => {
             ))}
           </nav>
         ) : null}
-
-        {/* {showMobileMenu && items && (
-          <MobileNav items={items}> {children} </MobileNav>
-        )} */}
       </div>
 
       <nav className="d-flex align-items-center gap-3">
-        {/* drop down menu and avatar */}
-        {!loginSession && (
+        {!isAuthenticated ? (
           <div className="d-flex align-items-center gap-3">
             <Link to="/login">
               <button className="btn btn-dark px-3 text-white text-decoration-none">
@@ -84,62 +52,31 @@ const MainNav = ({ items }) => {
               </Dropdown.Menu>
             </Dropdown>
           </div>
-        )}
+        ) : (
+          <Dropdown>
+            <Dropdown.Toggle variant="light" id="dropdown-user">
+              <Avatar src={user.profilePicture} />
+            </Dropdown.Toggle>
 
-        {/* {loginSession && (
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <div className="cursor-pointer">
-                <Avatar>
-                  <AvatarImage
-                    src={loggedInUser?.profilePicture}
-                    alt="@ariyan"
-                  />
-                  <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
-              </div>
-            </DropdownMenuTrigger>
+            <Dropdown.Menu>
+              <Dropdown.Item as={Link} to="/account">
+                Profiles
+              </Dropdown.Item>
 
-            <DropdownMenuContent align="end" className="w-56 mt-4">
-              <DropdownMenuItem className="cursor-pointer" asChild>
-                <Link href={"/account"}>Profile</Link>
-              </DropdownMenuItem>
-
-              {loggedInUser?.role === "instructor" && (
-                <DropdownMenuItem className="cursor-pointer" asChild>
-                  <Link href={"/dashboard"}>Instructor Dashboard</Link>
-                </DropdownMenuItem>
+              {user.role === "instructor" && (
+                <Dropdown.Item as={Link} to="/dashboard">
+                  Instructor Dashboard
+                </Dropdown.Item>
               )}
 
-              <DropdownMenuItem className="cursor-pointer">
-                <Link href={"/account/enrolled-courses"}>My Courses</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem className="cursor-pointer">
-                <Link href={"#"}>Testimonials & Certificate</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem className="cursor-pointer">
-                <Link
-                  href={"#"}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    signOut({
-                      callbackUrl: "/",
-                    });
-                  }}
-                >
-                  Logout
-                </Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        )} */}
+              <Dropdown.Item as={Link} to="/account/enrolled-courses">
+                My Courses
+              </Dropdown.Item>
 
-        {/* <button
-          className="flex items-center space-x-2 lg:hidden"
-          onClick={() => setShowMobileMenu(!showMobileMenu)}
-        >
-          {showMobileMenu ? <X /> : <Menu />}
-        </button> */}
+              <Dropdown.Item onClick={logout}>Logout</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        )}
       </nav>
     </>
   );

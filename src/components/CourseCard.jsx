@@ -7,7 +7,8 @@ const CourseCard = ({ course }) => {
       <Link to={`/courses/${course.id}`} className="text-decoration-none text-dark">
         <div className="ratio ratio-16x9">
           <img
-            src={`/assets/images/courses/${course.thumbnail}`}
+            // src={`/assets/images/courses/${course.thumbnail}`}
+            src={`${course.thumbnail}`}
             alt={course.title}
             className="card-img-top object-fit-cover"
           />
