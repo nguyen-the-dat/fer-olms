@@ -3,12 +3,12 @@ import { Card, Accordion, Row, Col } from "react-bootstrap";
 import { BsBook, BsClock, BsBroadcast } from "react-icons/bs";
 import CourseModuleList from "./CourseModuleList"; 
 const CourseCurriculum = ({ course }) => {
-  const totalDuration = course?.modules
-    ?.map((item) => {
-      return item.lessonIds.reduce((acc, obj) => acc + (obj.duration || 0), 0);
-    })
-    .reduce((acc, obj) => acc + obj, 0);
-
+  // const totalDuration = course?.modules
+  //   ?.map((item) => {
+  //     return item.lessonIds.reduce((acc, obj) => acc + (obj.duration || 0), 0);
+  //   })
+  //   .reduce((acc, obj) => acc + obj, 0);
+  const totalDuration = 7200;
   return (
     <>
       {/* Info summary */}

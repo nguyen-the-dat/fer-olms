@@ -51,117 +51,43 @@
   ],
   "courses": [
     {
-      "id": 1,
-      "title": "Master Python - Updated new 2",
-      "subtitle": "Learn Python Like a Pro",
-      "thumbnail": "https://firebasestorage.googleapis.com/v0/b/indocs-e3006.appspot.com/o/courses%2F1_nlxh-200-chu-giac-mo-khong-phai-la-thu-ban-nhin-thay-khi-ngu-144146.jpg?alt=media&token=5ebecbaf-9a60-47e6-a6b2-4c58ca648206",
-      "modules": [],
-      "price": 19.99,
+      "title": "Java Spring MVC - Xây Dựng FullStack Website với Spring Boot",
+      "description": "Spring Framework là công cụ rất nổi tiếng trong cộng đồng Java, và một trong các tác dụng cùa nó là xây dựng một website hoàn chỉnh và chuyên nghiệp.\n\nBằng cách áp dụng mô hình MVC (Model-View-Controller) và kiến trúc của Spring giúp chúng ta tiết kiệm thời gian xây dựng một website.",
       "active": true,
-      "category": {
-        "id": 1,
-        "title": "Development",
-        "description": "Developments Courses",
-        "thumbnail": "development.jpg"
-      },
+      "price": 20000,
       "instructor": {
-        "id": 4,
-        "firstName": "Pter",
-        "lastName": "Josh Does",
-        "email": "datloan14081@gmail.com",
-        "role": "instructor",
-        "bio": "",
-        "profilePicture": "https://i.pravatar.cc",
-        "designation": ""
-      },
-      "testimonials": []
-    },
-    {
-      "id": 2,
-      "title": "Mastering JavaScript updated",
-      "subtitle": "Learn Javascript from the scratch",
-      "thumbnail": "learn_js_thumbnail.jpeg",
-      "modules": [],
-      "price": 56,
-      "category": {
-        "id": 7,
-        "title": "Photography",
-        "description": "Photography Courses",
-        "thumbnail": "photography.jpg"
-      },
-      "instructor": {
-        "id": 1,
-        "firstName": "Pter",
-        "lastName": "Josh Does",
-        "email": "datloan14081@gmail.com",
-        "role": "instructor",
-        "bio": "",
-        "profilePicture": "https://i.pravatar.cc",
-        "designation": ""
-      },
-      "testimonials": []
-    },
-    {
-      "id": 3,
-      "title": "Next.js 15 Full Stack Complete Learning Management System",
-      "subtitle": "subtitle",
-      "thumbnail": "Screenshot 2025-06-11 120734.png",
-      "modules": [],
-      "price": 23,
-      "category": {
-        "id": 1,
-        "title": "Development",
-        "description": "Developments Courses",
-        "thumbnail": "development.jpg"
-      },
-      "instructor": {
-        "id": 1,
-        "firstName": "Pter",
-        "lastName": "Josh Does",
-        "email": "datloan14081@gmail.com",
-        "role": "instructor",
-        "bio": "",
-        "profilePicture": "https://i.pravatar.cc",
-        "designation": ""
-      },
-      "testimonials": []
-    },
-    {
-      "title": "spring boot java course update",
-      "description": "learning spring boot course with senior dev from viettel",
-      "active": true,
-      "price": 6.9,
-      "instructor": {
-        "email": "datloan14@gmail.com",
+        "email": "datloan1408@gmail.com",
         "profilePicture": "https://i.pravatar.cc",
         "bio": "",
         "phone": "",
         "socialMedia": {},
         "name": "Nguyễn Đạt",
         "role": "instructor",
-        "id": 4
+        "id": 1
       },
-      "modules": [
-        1,
-        2,
-        3
-      ],
+      "modules": [1, 2, 3, 4, 5],
       "testimonials": [],
-      "id": 4,
-      "subtitle": "advanced web development",
-      "thumbnail": "https://firebasestorage.googleapis.com/v0/b/indocs-e3006.appspot.com/o/courses%2F4_113818350_2670076123208175_188602434153509607_n.jpg?alt=media&token=c54289bc-ebeb-406c-b83a-2b43f608f479",
+      "id": 1,
+      "subtitle": "Học Spring MVC Chưa Từng Dễ Tới Vậy",
+      "thumbnail": "https://firebasestorage.googleapis.com/v0/b/indocs-e3006.appspot.com/o/courses%2F1_spring-boot-la-gi.webp?alt=media&token=779ff1e7-4e09-4125-b2ff-81ce9480f24b",
       "category": {
         "id": 4,
         "title": "IT & Software",
         "description": "IT & Software Courses",
         "thumbnail": "it_software.jpg"
-      }
+      },
+      "learning": [
+        "Học Java từ các kiến thức cơ bản",
+        "Áp dụng kiến thức Java và Spring Boot để xây dựng ứng dụng thực tế",
+        "Phát triển các dự án sẵn sàng triển khai trong môi trường sản xuất",
+        "Tặng kèm chương bonus về cách sử dụng Spring Boot trong phát triển REST API và bảo mật ứng dụng"
+      ]
     }
   ],
   "users": [
     {
       "email": "datloan1408@gmail.com",
-      "password": "$2a$10$G6gOkS43KOerY92d.hAOQer7AtolXXT7XLhV12XM9I9mvbU.1P6T2",
+      "password": "$2a$10$pIxJ2Nke596xflcqMZvYSOPO31f6JyBFcx10H32GtZK2tz1hpn.xy",
       "profilePicture": "https://i.pravatar.cc",
       "bio": "",
       "phone": "",
@@ -172,7 +98,7 @@
     },
     {
       "email": "datloan14081@gmail.com",
-      "password": "$2a$10$nalTHnAjJB3PaIYsM6QJoeqLEJvTd9Q7QjXVPfOmV0acFfYS3.8/O",
+      "password": "$2a$10$zs8UHDyHvOZp7B9hloZHu.a35S77hGgW7zqBNmcomeOK8vujed1ry",
       "profilePicture": "https://i.pravatar.cc",
       "bio": "",
       "phone": "",
@@ -180,110 +106,281 @@
       "name": "Nguyễn Đạt",
       "role": "student",
       "id": 2
-    },
-    {
-      "email": "dattram@gmail.com",
-      "password": "$2a$10$AWb7xm9zXBv5u3iMJfrbAuzCRUaJsAIaxqiG5dONtz4jEvVK36NKi",
-      "profilePicture": "https://i.pravatar.cc",
-      "bio": "",
-      "phone": "",
-      "socialMedia": {},
-      "name": "Dat Trm",
-      "role": "instructor",
-      "id": 3
-    },
-    {
-      "email": "datloan14@gmail.com",
-      "password": "$2a$10$SJc9ZIDcGgL3ti2u2t3RJ.cuf7oB1.YtxAubnLpsEEUEJdw6rLDkW",
-      "profilePicture": "https://i.pravatar.cc",
-      "bio": "",
-      "phone": "",
-      "socialMedia": {},
-      "name": "Nguyễn Đạt",
-      "role": "instructor",
-      "id": 4
-    },
-    {
-      "email": "datloan14089@gmail.com",
-      "password": "$2a$10$b.UPd/seuoO.wSuHgh8EVeDURAxQFKCtLj8hwbUbl4Ek0i2.X3B8a",
-      "profilePicture": "https://i.pravatar.cc",
-      "bio": "",
-      "phone": "",
-      "socialMedia": {},
-      "name": "Nguyễn Đạt",
-      "role": "student",
-      "id": 5
     }
   ],
   "modules": [
     {
-      "title": "module 2",
-      "slug": "module-2",
-      "courseId": "4",
-      "order": 2,
-      "lessonIds": [],
-      "active": false,
+      "title": "Chapter 1: Bắt buộc xem",
+      "slug": "chapter-1-bat-buoc-xem",
+      "courseId": "1",
+      "order": "0",
+      "lessonIds": [1, 2, 3, 4, 5, 6, 7],
+      "active": true,
       "duration": 0,
       "id": 1
     },
     {
-      "title": "module 1 update",
-      "slug": "module-1-update",
-      "courseId": "4",
-      "order": 0,
-      "lessonIds": [
-        1,
-        2,
-        3
-      ],
+      "title": "Chapter 2: Setup Environment",
+      "slug": "chapter-2-setup-environment",
+      "courseId": "1",
+      "order": "1",
+      "lessonIds": [8, 9, 10],
       "active": true,
       "duration": 0,
       "id": 2
     },
     {
-      "title": "test module moi",
-      "slug": "test-module-moi",
-      "courseId": "4",
-      "order": 1,
-      "lessonIds": [],
-      "active": false,
+      "title": "Chapter 3: Hello World với Spring",
+      "slug": "chapter-3-hello-world-voi-spring",
+      "courseId": "1",
+      "order": "2",
+      "lessonIds": [11, 12],
+      "active": true,
       "duration": 0,
       "id": 3
+    },
+    {
+      "title": "Chapter 4: Maven & Cấu trúc dự án Spring Boot",
+      "slug": "chapter-4-maven-cau-truc-du-an-spring-boot",
+      "courseId": "1",
+      "order": "3",
+      "lessonIds": [13, 14],
+      "active": true,
+      "duration": 0,
+      "id": 4
+    },
+    {
+      "title": "Chapter 5: Spring và Inversion of Control (IoC) update",
+      "slug": "chapter-5-spring-va-inversion-of-control-ioc-update",
+      "courseId": "1",
+      "order": "4",
+      "lessonIds": [15, 16],
+      "active": true,
+      "duration": 0,
+      "id": 5
     }
   ],
   "lessons": [
     {
+      "title": "#1. Hướng Dẫn Sử Dụng Khóa Học Hiệu Quả",
+      "slug": "1-huong-dan-su-dung-khoa-hoc-hieu-qua",
+      "moduleId": "1",
+      "order": "0",
+      "description": "",
+      "duration": 1111,
+      "video_url": "https://www.youtube.com/embed/sWSm-NyFlW8?si=_W2dVELQPl5Tfbq0",
+      "access": "public",
+      "active": true,
       "id": 1,
-      "title": "Introduction to Variables update",
-      "description": "Learn the basics of variables in programming update.",
-      "duration": 630,
-      "video_url": "https://example.com/variables_video",
-      "slug": "introduction-to-variables-update",
-      "access": "private",
-      "active": true,
-      "order": 0
+      "courseId": 1
     },
     {
+      "title": "#2. Hướng Dẫn Quyền Truy Cập Tài Liệu Khóa Học",
+      "slug": "2-huong-dan-quyen-truy-cap-tai-lieu-khoa-hoc",
+      "moduleId": "1",
+      "order": "1",
+      "description": "",
+      "duration": 1759,
+      "video_url": "https://www.youtube.com/embed/cMra0TpXgBQ?si=ZknxzxY7x5cResrL",
+      "access": "private",
+      "active": true,
       "id": 2,
-      "title": "HTML Basics update 3",
-      "description": "Understand the fundamentals of HTML.",
-      "duration": 205,
-      "video_url": "https://www.youtube.com/embed/ybfq5gtvnj0?si=FQnbTJWGFzf_rnlp",
-      "slug": "html-basics-update-3",
-      "access": "private",
-      "active": true,
-      "order": 2
+      "courseId": 1
     },
     {
-      "id": 3,
-      "title": "Introduction to Machine Learning update 2",
-      "description": "Get introduced to the exciting field of machine learning.",
-      "duration": 620,
-      "video_url": "https://www.youtube.com/embed/PebLShakKCE?si=LOq-p0enj1OdIIEI",
-      "slug": "introduction-to-machine-learning-update-2",
+      "title": "#4. Hướng Dẫn Tải Source Code Theo Từng Video",
+      "slug": "4-huong-dan-tai-source-code-theo-tung-video",
+      "moduleId": "1",
+      "order": "2",
+      "description": "",
+      "duration": 268,
+      "video_url": "https://www.youtube.com/embed/6Y6ooOr_Yy4?si=r1f6dCLLQTDquzVd",
       "access": "private",
       "active": true,
-      "order": 1
+      "id": 3,
+      "courseId": 1
+    },
+    {
+      "title": "#3. Hướng Dẫn Quyền Truy Cập Source Code",
+      "slug": "3-huong-dan-quyen-truy-cap-source-code",
+      "moduleId": "1",
+      "order": "3",
+      "description": "",
+      "duration": 206,
+      "video_url": "https://www.youtube.com/embed/UhQuMgpaWrg?si=9d48cJf-fVRemSza",
+      "access": "private",
+      "active": true,
+      "id": 4,
+      "courseId": 1
+    },
+    {
+      "title": "#5.1. Demo kết quả đạt được",
+      "slug": "51-demo-ket-qua-dat-duoc",
+      "moduleId": "1",
+      "order": "4",
+      "description": "",
+      "duration": 332,
+      "video_url": "https://www.youtube.com/embed/vDfkqjhtiCM?si=i8jMeSOx3uyZTSVD",
+      "access": "private",
+      "active": true,
+      "id": 5,
+      "courseId": 1
+    },
+    {
+      "title": "#5.2 Yêu cầu để học được khóa học này",
+      "slug": "52-yeu-cau-de-hoc-duoc-khoa-hoc-nay",
+      "moduleId": "1",
+      "order": "5",
+      "description": "",
+      "duration": 264,
+      "video_url": "https://www.youtube.com/embed/9GLwkGkMIxc?si=80vz_WgEZYXYuIRR",
+      "access": "private",
+      "active": true,
+      "id": 6,
+      "courseId": 1
+    },
+    {
+      "title": "#5.3 Cách Dùng Udemy - Hỗ Trợ Hỏi Đáp Q&A",
+      "slug": "53-cach-dung-udemy-ho-tro-hoi-dap-qa",
+      "moduleId": "1",
+      "order": "6",
+      "description": "",
+      "duration": 299,
+      "video_url": "https://www.youtube.com/embed/l0d9pCtFVnw?si=OAfACWKKgC8W3MHq",
+      "access": "private",
+      "active": true,
+      "id": 7,
+      "courseId": 1
+    },
+    {
+      "title": "#6. Cài Java version 17",
+      "slug": "6-cai-java-version-17",
+      "moduleId": "2",
+      "order": "0",
+      "description": "",
+      "duration": 380,
+      "video_url": "https://www.youtube.com/embed/N4Xak1n497M?si=mN4_2nqNt6wakDvh",
+      "access": "private",
+      "active": true,
+      "id": 8,
+      "courseId": 1
+    },
+    {
+      "title": "#7. Cài đặt Visual Studio Code",
+      "slug": "7-cai-dat-visual-studio-code",
+      "moduleId": "2",
+      "order": "1",
+      "description": "",
+      "duration": 327,
+      "video_url": "https://www.youtube.com/embed/dTsvdUX15kc?si=dWGtTWUi4xQuKmVD",
+      "access": "private",
+      "active": true,
+      "id": 9,
+      "courseId": 1
+    },
+    {
+      "title": "#12. Cài đặt Postman",
+      "slug": "12-cai-dat-postman",
+      "moduleId": "2",
+      "order": "2",
+      "description": "",
+      "duration": 274,
+      "video_url": "https://www.youtube.com/embed/sOU67aneq1Q?si=6AauJCVQQgnsJAup",
+      "access": "private",
+      "active": true,
+      "id": 10,
+      "courseId": 1
+    },
+    {
+      "title": "#13. Java Spring là gì ?",
+      "slug": "13-java-spring-la-gi",
+      "moduleId": "3",
+      "order": "0",
+      "description": "",
+      "duration": 492,
+      "video_url": "https://www.youtube.com/embed/Rzm_kltwHbg?si=04dzvX43fGdEfV5a",
+      "access": "private",
+      "active": true,
+      "id": 11,
+      "courseId": 1
+    },
+    {
+      "title": "#19. Tài liệu của Java Spring ?",
+      "slug": "19-tai-lieu-cua-java-spring",
+      "moduleId": "3",
+      "order": "1",
+      "description": "",
+      "duration": 371,
+      "video_url": "https://www.youtube.com/embed/NlrYe__kDvE?si=iUFrFiHCVT429Nvw",
+      "access": "private",
+      "active": true,
+      "id": 12,
+      "courseId": 1
+    },
+    {
+      "title": "#22. Spring Build Tool và Maven",
+      "slug": "22-spring-build-tool-va-maven",
+      "moduleId": "4",
+      "order": "0",
+      "description": "",
+      "duration": 721,
+      "video_url": "https://www.youtube.com/embed/wEPX3V5T63M?si=HsAE2Qnu2WbDAPev",
+      "access": "private",
+      "active": true,
+      "id": 13
+    },
+    {
+      "title": "#25. Cú pháp đặt tên thư viện/project với Spring",
+      "slug": "25-cu-phap-dat-ten-thu-vien-project-voi-spring",
+      "moduleId": "4",
+      "order": "1",
+      "description": "",
+      "duration": 252,
+      "video_url": "https://www.youtube.com/embed/e1hRL4FAnjU?si=iJdb1gXr3lkXo9bf",
+      "access": "private",
+      "active": true,
+      "id": 14,
+      "courseId": 1
+    },
+    {
+      "title": "#27. Kiến trúc của Spring Framework",
+      "slug": "27-kien-truc-cua-spring-framework",
+      "moduleId": "5",
+      "order": "0",
+      "description": "",
+      "duration": 132,
+      "video_url": "https://www.youtube.com/embed/1Zn4L7vi9gg?si=dYp2W1242-9OK6Rq",
+      "access": "private",
+      "active": true,
+      "id": 15,
+      "courseId": 1
+    },
+    {
+      "title": "#31. Viết code “tightly coupled” và “loosely coupled”",
+      "slug": "31-viet-code-tightly-coupled-va-loosely-coupled",
+      "moduleId": "5",
+      "order": "1",
+      "description": "",
+      "duration": 852,
+      "video_url": "https://youtu.be/5Jmb7mO3TbM?si=xOsw62Zq8W1bOuUX",
+      "access": "private",
+      "active": true,
+      "id": 16,
+      "courseId": 1
     }
-  ]
+  ],
+
+  "enrollments": [
+    {
+      "userId": 2,
+      "courseId": 1,
+      "createdAt": "2025-07-12T17:54:11.038Z",
+      "status": "PAID",
+      "orderCode": 1752342850532,
+      "customerInfo": "Nguyễn Đạt",
+      "id": 1
+    }
+  ],
+  "watches": [],
+  "reports": []
 }

@@ -26,6 +26,7 @@ const AddCourse = () => {
     },
   });
   const navigate = useNavigate();
+  const { isAuthenticated, user } = useAuth();
   const onSubmit = async (values) => {
     try {
       const newCourse = await createCourse(values, user);
@@ -37,8 +38,6 @@ const AddCourse = () => {
     }
   };
 
-  const { user } = useAuth();
-  console.log("user", user);
   return (
     <Container className="mt-5">
       <Row className="justify-content-center">

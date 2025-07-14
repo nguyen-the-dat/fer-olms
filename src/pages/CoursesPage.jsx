@@ -1,101 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import React, { useEffect, useState } from "react";
+import { Container, Row, Col, Button } from "react-bootstrap";
 // import { getCourseList } from '../api/course';
-import CourseCard from '../components/CourseCard';
-import SearchCourse from '../components/SearchCourse';
-import SortCourse from '../components/SortCourse';
-import FilterCourse from '../components/FilterCourse';
-import FilterCourseMobile from '../components/FilterCourseMobile';
-import ActiveFilters from '../components/ActiveFilters';
+import CourseCard from "../components/CourseCard";
+import SearchCourse from "../components/SearchCourse";
+import SortCourse from "../components/SortCourse";
+import FilterCourse from "../components/FilterCourse";
+import FilterCourseMobile from "../components/FilterCourseMobile";
+import ActiveFilters from "../components/ActiveFilters";
+import { fetchCourses } from "../api/courses";
+const CoursesPage = () => {
+  const [courses, setCourses] = useState([]);
 
-const courses = [
-    {
-      "id": 1,
-      "title": "Learn Python",
-      "subtitle": "Learn Python Like a Pro",
-      "thumbnail": "python_thumbnail.png",
-      "modules": [],
-      "price": 29.99,
-      "category": {
-        "id": 1,
-        "title": "Development",
-        "description": "Developments Courses",
-        "thumbnail": "development.jpg"
-      },
-      "instructor": {
-        "id": 1,
-        "firstName": "Pter",
-        "lastName": "Josh Does",
-        "email": "datloan14081@gmail.com",
-        "role": "instructor",
-        "bio": "",
-        "profilePicture": "https://i.pravatar.cc",
-        "designation": ""
-      },
-      "testimonials": []
-    },
-    {
-      "id": 2,
-      "title": "Mastering JavaScript updated",
-      "subtitle": "Learn Javascript from the scratch",
-      "thumbnail": "learn_js_thumbnail.jpeg",
-      "modules": [],
-      "price": 56,
-      "category": {
-        "id": 7,
-        "title": "Photography",
-        "description": "Photography Courses",
-        "thumbnail": "photography.jpg"
-      },
-      "instructor": {
-        "id": 1,
-        "firstName": "Pter",
-        "lastName": "Josh Does",
-        "email": "datloan14081@gmail.com",
-        "role": "instructor",
-        "bio": "",
-        "profilePicture": "https://i.pravatar.cc",
-        "designation": ""
-      },
-      "testimonials": []
-    },
-    {
-      "id": 3,
-      "title": "Next.js 15 Full Stack Complete Learning Management System",
-      "subtitle": "subtitle",
-      "thumbnail": "Screenshot 2025-06-11 120734.png",
-      "modules": [],
-      "price": 23,
-      "category": {
-        "id": 1,
-        "title": "Development",
-        "description": "Developments Courses",
-        "thumbnail": "development.jpg"
-      },
-      "instructor": {
-        "id": 1,
-        "firstName": "Pter",
-        "lastName": "Josh Does",
-        "email": "datloan14081@gmail.com",
-        "role": "instructor",
-        "bio": "",
-        "profilePicture": "https://i.pravatar.cc",
-        "designation": ""
-      },
-      "testimonials": []
-    }
-  ]
-
- const CoursesPage = () => {
-//   const [courses, setCourses] = useState([]);
-
-//   useEffect(() => {
-//     const fetchCourses = async () => {
-//       const courseData = await getCourseList();
-//       setCourses(courseData);
-//     };
-//     fetchCourses();
-//   }, []);
+  useEffect(() => {
+    const fetchCoursesData = async () => {
+      const courseData = await fetchCourses();
+      setCourses(courseData);
+    };
+    fetchCoursesData();
+  }, []);
 
   return (
     <Container className="py-5">
@@ -115,9 +37,9 @@ const courses = [
         <Col>
           <ActiveFilters
             filter={{
-              categories: ['development'],
-              price: ['free'],
-              sort: '',
+              categories: ["development"],
+              price: ["free"],
+              sort: "",
             }}
           />
         </Col>

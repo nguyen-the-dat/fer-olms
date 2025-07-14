@@ -70,3 +70,122 @@ export const updateLesson = async (lessonId, updatedField) => {
     throw error;
   }
 };
+// api/lessons.js
+
+export async function fetchLessonsByCourseId(courseId) {
+  try {
+    const res = await fetch(
+      `http://localhost:3001/lessons?courseId=${courseId}&active=true`
+    );
+    if (!res.ok) throw new Error("Failed to fetch lessons");
+
+    const lessons = await res.json();
+    console.log("less", lessons);
+    // Sắp xếp theo thứ tự nếu cần
+    const sorted = lessons.sort((a, b) => a.order - b.order);
+    return sorted;
+  } catch (error) {
+    console.error("Lỗi khi fetch lessons:", error);
+    return [];
+  }
+}
+
+export async function updateLessonWatch({
+  courseId,
+  lessonId,
+  moduleSlug,
+  state,
+  userId,
+  lastTime = 0,
+}) {
+  try {
+    // 1. Get module by slug
+    const moduleRes = await fetch(`${API_BASE_URL}/modules?slug=${moduleSlug}`);
+    const module = (await moduleRes.json())[0];
+    if (!module) throw new Error("Module not found");
+
+    // 2. Get lesson
+    const lessonRes = await fetch(`${baseURL}/lessons/${lessonId}`);
+    const lesson = await lessonRes.json();
+    if (!lesson) throw new Error("Lesson not found");
+
+    // 3. Check for existing watch entry
+    const watchRes = await fetch(
+      `${baseURL}/watches?user=${userId}&lesson=${lessonId}&module=${module.id}`
+    );
+    const watchData = await watchRes.json();
+    const watch = watchData[0];
+
+    const now = Date.now();
+
+    if (state === "started" && !watch) {
+      await fetch(`${API_BASE_URL}/watches`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          user: userId,
+          lesson: lessonId,
+          module: module.id,
+          state: "started",
+          lastTime: lastTime,
+          created_at: now,
+        }),
+      });
+    }
+
+    if (state === "completed") {
+      if (!watch) {
+        await fetch(`${API_BASE_URL}/watches`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            user: userId,
+            lesson: lessonId,
+            module: module.id,
+            state: "completed",
+            lastTime: lastTime,
+            created_at: now,
+          }),
+        });
+
+        // Create report
+        await fetch(`${API_BASE_URL}/reports`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            userId,
+            courseId,
+            moduleId: module.id,
+            lessonId,
+          }),
+        });
+      } else if (watch.state === "started") {
+        await fetch(`${API_BASE_URL}/watches/${watch.id}`, {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            state: "completed",
+            modified_at: now,
+          }),
+        });
+
+        // Create report
+        await fetch(`${API_BASE_URL}/reports`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            userId,
+            courseId,
+            moduleId: module.id,
+            lessonId,
+          }),
+        });
+      }
+    }
+
+    return "Watch entry updated successfully";
+  } catch (error) {
+    console.error("updateLessonWatch error:", error.message);
+    throw error;
+  }
+}

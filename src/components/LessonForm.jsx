@@ -64,6 +64,7 @@ export const LessonForm = ({
       formData.append("slug", getSlug(values.title));
       formData.append("moduleId", moduleId);
       formData.append("order", lessons.length);
+      formData.append("courseId", courseId);
       const lesson = await createLesson(formData);
 
       setLessons((prev) => [
@@ -129,7 +130,7 @@ export const LessonForm = ({
               "Cancel"
             ) : (
               <>
-                <PlusCircle size={16} className="me-2" /> Add a chapter
+                <PlusCircle size={16} className="me-2" /> Add a lesson
               </>
             )}
           </Button>

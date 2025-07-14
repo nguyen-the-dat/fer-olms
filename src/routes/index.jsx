@@ -14,6 +14,9 @@ import EditCourseDetailPage from "../pages/EditCourseDetailPage";
 import QuizSets from "../components/QuizSets";
 import ProtectedInstructorRoute from "../components/ProtectedInstructorRoute";
 import EditModuleDetailPage from "../pages/EditModuleDetailPage";
+import EnrollSucess from "../pages/EnrollSuccess";
+import ProtectedEnrollmentRoute from "../components/ProtectedEnrollmentRoute";
+import LearnCourseLayoutWrapper from "../components/LearnCourseLayoutWrapper";
 const AppRoutes = () => (
   <BrowserRouter>
     <Routes>
@@ -23,6 +26,17 @@ const AppRoutes = () => (
         <Route path="/courses" element={<CoursePage />} />
         <Route path="/courses/:id" element={<SingleCoursePage />} />
         <Route path="/account" element={<Profile />} />
+        <Route path="/enroll-success" element={<EnrollSucess />} />
+        {/* Course Enroll */}
+
+        <Route
+          path="/courses/:courseId/lesson"
+          element={
+            <ProtectedEnrollmentRoute>
+              <LearnCourseLayoutWrapper />
+            </ProtectedEnrollmentRoute>
+          }
+        />
       </Route>
 
       {/* Instructor dashboard */}
@@ -32,7 +46,10 @@ const AppRoutes = () => (
         <Route path="quiz-sets" element={<QuizSets />} />
         <Route path="courses/add" element={<AddCourse />} />
         <Route path="courses/:id" element={<EditCourseDetailPage />} />
-        <Route path="courses/:courseId/modules/:moduleId" element={<EditModuleDetailPage />} />
+        <Route
+          path="courses/:courseId/modules/:moduleId"
+          element={<EditModuleDetailPage />}
+        />
       </Route>
 
       {/* Auth pages */}
