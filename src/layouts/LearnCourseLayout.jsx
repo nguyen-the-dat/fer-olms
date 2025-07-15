@@ -7,9 +7,7 @@ const LearnCourseLayout = ({ children, courseId }) => {
           <CourseSidebar courseId={courseId} />
         </div>
 
-        <div className="col-10 px-4 py-3">
-          {children}
-        </div>
+        <div className="col-10 px-4 py-3">{children}</div>
       </div>
     </div>
   );

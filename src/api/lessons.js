@@ -105,13 +105,13 @@ export async function updateLessonWatch({
     if (!module) throw new Error("Module not found");
 
     // 2. Get lesson
-    const lessonRes = await fetch(`${baseURL}/lessons/${lessonId}`);
+    const lessonRes = await fetch(`${API_BASE_URL}/lessons/${lessonId}`);
     const lesson = await lessonRes.json();
     if (!lesson) throw new Error("Lesson not found");
 
     // 3. Check for existing watch entry
     const watchRes = await fetch(
-      `${baseURL}/watches?user=${userId}&lesson=${lessonId}&module=${module.id}`
+      `${API_BASE_URL}/watches?user=${userId}&lesson=${lessonId}&module=${module.id}`
     );
     const watchData = await watchRes.json();
     const watch = watchData[0];
@@ -147,18 +147,6 @@ export async function updateLessonWatch({
             created_at: now,
           }),
         });
-
-        // Create report
-        await fetch(`${API_BASE_URL}/reports`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            userId,
-            courseId,
-            moduleId: module.id,
-            lessonId,
-          }),
-        });
       } else if (watch.state === "started") {
         await fetch(`${API_BASE_URL}/watches/${watch.id}`, {
           method: "PATCH",
@@ -166,18 +154,6 @@ export async function updateLessonWatch({
           body: JSON.stringify({
             state: "completed",
             modified_at: now,
-          }),
-        });
-
-        // Create report
-        await fetch(`${API_BASE_URL}/reports`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            userId,
-            courseId,
-            moduleId: module.id,
-            lessonId,
           }),
         });
       }

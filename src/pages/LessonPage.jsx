@@ -3,10 +3,11 @@ import { useEffect, useState } from "react";
 // import LessonVideo from "./LessonVideo";
 // import VideoDescription from "./VideoDescription";
 // import { Separator } from "./ui/Separator"; // nếu bạn có separator
-import { fetchLessonsByCourseId } from "../api/lessons"; // hoặc gọi từ đâu đó
+import { fetchLessonsByCourseId } from "../api/lessons";
 import { Container, Row, Col } from "react-bootstrap";
 import { LessonVideo } from "../components/LessonVideo";
-const LessonPage = () => {
+import VideoDescription from "../components/VideoDescription";
+const LessonPage = ({ setProgress }) => {
   const { courseId } = useParams();
   const [searchParams] = useSearchParams();
   const name = searchParams.get("name");
@@ -48,13 +49,13 @@ const LessonPage = () => {
         </Col>
       </Row>
 
-      {/* <Row className="mb-3">
+      <Row className="mb-3">
         <Col>
           <h2 className="h4 fw-semibold mb-3">{lessonToPlay?.title}</h2>
           <hr />
           <VideoDescription description={lessonToPlay?.description} />
         </Col>
-      </Row> */}
+      </Row>
     </Container>
   );
 };

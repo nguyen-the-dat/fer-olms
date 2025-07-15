@@ -1,13 +1,16 @@
 import { useParams } from "react-router-dom";
-import CourseLayout from "../layouts/LearnCourseLayout";
+import LearnCourseLayout from "../layouts/LearnCourseLayout";
 import LessonPage from "../pages/LessonPage";
+import { ProgressProvider } from "../context/ProgressContext";
+
 const LearnCourseLayoutWrapper = () => {
   const { courseId } = useParams();
-  console.log('courseId:', courseId);
   return (
-    <CourseLayout courseId={courseId}>
-      <LessonPage />
-    </CourseLayout>
+    <ProgressProvider>
+      <LearnCourseLayout courseId={courseId}>
+        <LessonPage />
+      </LearnCourseLayout>
+    </ProgressProvider>
   );
 };
 

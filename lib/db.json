@@ -65,7 +65,13 @@
         "role": "instructor",
         "id": 1
       },
-      "modules": [1, 2, 3, 4, 5],
+      "modules": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
       "testimonials": [],
       "id": 1,
       "subtitle": "Học Spring MVC Chưa Từng Dễ Tới Vậy",
@@ -114,7 +120,15 @@
       "slug": "chapter-1-bat-buoc-xem",
       "courseId": "1",
       "order": "0",
-      "lessonIds": [1, 2, 3, 4, 5, 6, 7],
+      "lessonIds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
       "active": true,
       "duration": 0,
       "id": 1
@@ -124,7 +138,11 @@
       "slug": "chapter-2-setup-environment",
       "courseId": "1",
       "order": "1",
-      "lessonIds": [8, 9, 10],
+      "lessonIds": [
+        8,
+        9,
+        10
+      ],
       "active": true,
       "duration": 0,
       "id": 2
@@ -134,7 +152,10 @@
       "slug": "chapter-3-hello-world-voi-spring",
       "courseId": "1",
       "order": "2",
-      "lessonIds": [11, 12],
+      "lessonIds": [
+        11,
+        12
+      ],
       "active": true,
       "duration": 0,
       "id": 3
@@ -144,7 +165,10 @@
       "slug": "chapter-4-maven-cau-truc-du-an-spring-boot",
       "courseId": "1",
       "order": "3",
-      "lessonIds": [13, 14],
+      "lessonIds": [
+        13,
+        14
+      ],
       "active": true,
       "duration": 0,
       "id": 4
@@ -154,7 +178,10 @@
       "slug": "chapter-5-spring-va-inversion-of-control-ioc-update",
       "courseId": "1",
       "order": "4",
-      "lessonIds": [15, 16],
+      "lessonIds": [
+        15,
+        16
+      ],
       "active": true,
       "duration": 0,
       "id": 5
@@ -172,7 +199,8 @@
       "access": "public",
       "active": true,
       "id": 1,
-      "courseId": 1
+      "courseId": 1,
+      "playbackId": "4AGAxvOq4Qs44RqlVuoEGneMLzOCeUfVl8IO3w00ocqw"
     },
     {
       "title": "#2. Hướng Dẫn Quyền Truy Cập Tài Liệu Khóa Học",
@@ -185,7 +213,8 @@
       "access": "private",
       "active": true,
       "id": 2,
-      "courseId": 1
+      "courseId": 1,
+      "playbackId": "4AGAxvOq4Qs44RqlVuoEGneMLzOCeUfVl8IO3w00ocqw"
     },
     {
       "title": "#4. Hướng Dẫn Tải Source Code Theo Từng Video",
@@ -198,7 +227,8 @@
       "access": "private",
       "active": true,
       "id": 3,
-      "courseId": 1
+      "courseId": 1,
+      "playbackId": "4AGAxvOq4Qs44RqlVuoEGneMLzOCeUfVl8IO3w00ocqw"
     },
     {
       "title": "#3. Hướng Dẫn Quyền Truy Cập Source Code",
@@ -211,7 +241,8 @@
       "access": "private",
       "active": true,
       "id": 4,
-      "courseId": 1
+      "courseId": 1,
+      "playbackId": "4AGAxvOq4Qs44RqlVuoEGneMLzOCeUfVl8IO3w00ocqw"
     },
     {
       "title": "#5.1. Demo kết quả đạt được",
@@ -224,7 +255,8 @@
       "access": "private",
       "active": true,
       "id": 5,
-      "courseId": 1
+      "courseId": 1,
+      "playbackId": "4AGAxvOq4Qs44RqlVuoEGneMLzOCeUfVl8IO3w00ocqw"
     },
     {
       "title": "#5.2 Yêu cầu để học được khóa học này",
@@ -237,7 +269,8 @@
       "access": "private",
       "active": true,
       "id": 6,
-      "courseId": 1
+      "courseId": 1,
+      "playbackId": "4AGAxvOq4Qs44RqlVuoEGneMLzOCeUfVl8IO3w00ocqw"
     },
     {
       "title": "#5.3 Cách Dùng Udemy - Hỗ Trợ Hỏi Đáp Q&A",
@@ -250,7 +283,8 @@
       "access": "private",
       "active": true,
       "id": 7,
-      "courseId": 1
+      "courseId": 1,
+      "playbackId": "4AGAxvOq4Qs44RqlVuoEGneMLzOCeUfVl8IO3w00ocqw"
     },
     {
       "title": "#6. Cài Java version 17",
@@ -263,7 +297,8 @@
       "access": "private",
       "active": true,
       "id": 8,
-      "courseId": 1
+      "courseId": 1,
+      "playbackId": "4AGAxvOq4Qs44RqlVuoEGneMLzOCeUfVl8IO3w00ocqw"
     },
     {
       "title": "#7. Cài đặt Visual Studio Code",
@@ -276,7 +311,8 @@
       "access": "private",
       "active": true,
       "id": 9,
-      "courseId": 1
+      "courseId": 1,
+      "playbackId": "4AGAxvOq4Qs44RqlVuoEGneMLzOCeUfVl8IO3w00ocqw"
     },
     {
       "title": "#12. Cài đặt Postman",
@@ -289,7 +325,8 @@
       "access": "private",
       "active": true,
       "id": 10,
-      "courseId": 1
+      "courseId": 1,
+      "playbackId": "4AGAxvOq4Qs44RqlVuoEGneMLzOCeUfVl8IO3w00ocqw"
     },
     {
       "title": "#13. Java Spring là gì ?",
@@ -302,7 +339,8 @@
       "access": "private",
       "active": true,
       "id": 11,
-      "courseId": 1
+      "courseId": 1,
+      "playbackId": "4AGAxvOq4Qs44RqlVuoEGneMLzOCeUfVl8IO3w00ocqw"
     },
     {
       "title": "#19. Tài liệu của Java Spring ?",
@@ -315,7 +353,8 @@
       "access": "private",
       "active": true,
       "id": 12,
-      "courseId": 1
+      "courseId": 1,
+      "playbackId": "4AGAxvOq4Qs44RqlVuoEGneMLzOCeUfVl8IO3w00ocqw"
     },
     {
       "title": "#22. Spring Build Tool và Maven",
@@ -327,7 +366,9 @@
       "video_url": "https://www.youtube.com/embed/wEPX3V5T63M?si=HsAE2Qnu2WbDAPev",
       "access": "private",
       "active": true,
-      "id": 13
+      "courseId": 1,
+      "id": 13,
+      "playbackId": "4AGAxvOq4Qs44RqlVuoEGneMLzOCeUfVl8IO3w00ocqw"
     },
     {
       "title": "#25. Cú pháp đặt tên thư viện/project với Spring",
@@ -340,7 +381,8 @@
       "access": "private",
       "active": true,
       "id": 14,
-      "courseId": 1
+      "courseId": 1,
+      "playbackId": "4AGAxvOq4Qs44RqlVuoEGneMLzOCeUfVl8IO3w00ocqw"
     },
     {
       "title": "#27. Kiến trúc của Spring Framework",
@@ -353,7 +395,8 @@
       "access": "private",
       "active": true,
       "id": 15,
-      "courseId": 1
+      "courseId": 1,
+      "playbackId": "4AGAxvOq4Qs44RqlVuoEGneMLzOCeUfVl8IO3w00ocqw"
     },
     {
       "title": "#31. Viết code “tightly coupled” và “loosely coupled”",
@@ -366,10 +409,10 @@
       "access": "private",
       "active": true,
       "id": 16,
-      "courseId": 1
+      "courseId": 1,
+      "playbackId": "4AGAxvOq4Qs44RqlVuoEGneMLzOCeUfVl8IO3w00ocqw"
     }
   ],
-
   "enrollments": [
     {
       "userId": 2,
@@ -381,6 +424,84 @@
       "id": 1
     }
   ],
-  "watches": [],
-  "reports": []
+  "watches": [
+    {
+      "user": 2,
+      "lesson": 1,
+      "module": 1,
+      "state": "completed",
+      "lastTime": 0,
+      "created_at": 1752484926428,
+      "id": 1,
+      "modified_at": 1752484937470
+    },
+    {
+      "user": 2,
+      "lesson": 2,
+      "module": 1,
+      "state": "completed",
+      "lastTime": 0,
+      "created_at": 1752486462379,
+      "id": 2,
+      "modified_at": 1752486482316
+    },
+    {
+      "user": 2,
+      "lesson": 7,
+      "module": 1,
+      "state": "completed",
+      "lastTime": 0,
+      "created_at": 1752491311243,
+      "id": 3,
+      "modified_at": 1752491326842
+    },
+    {
+      "user": 2,
+      "lesson": 12,
+      "module": 3,
+      "state": "completed",
+      "lastTime": 0,
+      "created_at": 1752491383014,
+      "id": 4,
+      "modified_at": 1752491394106
+    },
+    {
+      "user": 2,
+      "lesson": 15,
+      "module": 5,
+      "state": "completed",
+      "lastTime": 0,
+      "created_at": 1752491929990,
+      "id": 5,
+      "modified_at": 1752491946034
+    },
+    {
+      "user": 2,
+      "lesson": 14,
+      "module": 4,
+      "state": "completed",
+      "lastTime": 0,
+      "created_at": 1752491954854,
+      "id": 6,
+      "modified_at": 1752491978768
+    },
+    {
+      "user": 2,
+      "lesson": 6,
+      "module": 1,
+      "state": "started",
+      "lastTime": 0,
+      "created_at": 1752542739692,
+      "id": 7
+    }
+  ],
+  "testimonials": [
+    {
+      "rating": 4,
+      "review": "khoa hoc rat hay",
+      "userId": 2,
+      "courseId": "1",
+      "id": 1
+    }
+  ]
 }
