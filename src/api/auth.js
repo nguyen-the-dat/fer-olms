@@ -2,14 +2,20 @@
 
 const API_URL = "http://localhost:3001";
 
-export async function registerUser({ email, password, name, role }) {
+export async function registerUser({
+  email,
+  password,
+  firstName,
+  lastName,
+  role,
+}) {
   try {
     const response = await fetch(`${API_URL}/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password, name, role }),
+      body: JSON.stringify({ email, password, firstName, lastName, role }),
     });
 
     const data = await response.json();
@@ -51,7 +57,7 @@ export async function createCredentialLogin(formData) {
       throw new Error(data?.message || data || "Login failed");
     }
     console.log("Login response:", data);
-    return data; 
+    return data;
   } catch (err) {
     if (err instanceof Error) {
       throw err;
@@ -59,4 +65,54 @@ export async function createCredentialLogin(formData) {
       throw new Error("An unknown error occurred during login");
     }
   }
+}
+
+
+export async function updateUserByEmail(email, updatedData) {
+  try {
+    const res = await fetch(`${API_URL}/users?email=${email}`);
+    const users = await res.json();
+
+    if (!users.length) {
+      throw new Error("User not found");
+    }
+
+    const userId = users[0].id;
+
+    const updateRes = await fetch(`${API_URL}/users/${userId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedData),
+    });
+
+    if (!updateRes.ok) {
+      throw new Error("Failed to update user");
+    }
+
+    const updatedUser = await updateRes.json();
+    return updatedUser;
+  } catch (error) {
+    console.error("updateUserByEmail error:", error);
+    throw error;
+  }
+}
+
+
+export async function changePassword({ email, oldPassword, newPassword }) {
+  const res = await fetch('http://localhost:3001/change-password', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email, oldPassword, newPassword }),
+  });
+
+  const result = await res.json();
+  if (!res.ok) {
+    throw new Error(result.message || "Failed to change password");
+  }
+
+  return result;
 }

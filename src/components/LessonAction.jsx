@@ -2,17 +2,16 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, ButtonGroup } from "react-bootstrap";
 import { toast } from "react-toastify";
-import { updateModule } from "../api/modules";
-// import { changeModulePublishState, deleteModule } from "@/app/action/modules";
+import { updateLesson } from "../api/lessons";
 
-const ModuleActions = ({ moduleId, active, onUpdate }) => {
+const LessonActions = ({ lessonId, active, updateListLesson }) => {
   const [action, setAction] = useState(null);
   const [published, setPublished] = useState(active);
   const navigate = useNavigate();
 
   useEffect(() => {
     setPublished(active);
-  }, [moduleId, active]);
+  }, [lessonId, active]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,27 +22,29 @@ const ModuleActions = ({ moduleId, active, onUpdate }) => {
       switch (action) {
         case "change-active": {
           const newStatus = !published;
-          await updateModule(moduleId, { active: newStatus });
+          const lessonUpdated = await updateLesson(lessonId, {
+            active: newStatus,
+          });
+          updateListLesson(lessonUpdated)
           setPublished(newStatus);
           toast.success(
             newStatus
-              ? "The module has been published"
-              : "The module has been unpublished"
+              ? "The lesson has been published"
+              : "The lesson has been unpublished"
           );
-          onUpdate({ active: newStatus });
+
           break;
         }
 
         case "delete": {
           if (published) {
-            toast.error("You cannot delete a published module");
+            toast.error("You cannot delete a published lesson");
             return;
           }
 
-          // TODO: Uncomment and implement deleteModule if needed
-          // await deleteModule(moduleId);
-          toast.success("The module has been deleted");
-          navigate(`/dashboard/courses/${courseId}`);
+          // TODO: Implement actual deletion logic
+          toast.success("The lesson has been deleted");
+          navigate("/dashboard/lessons");
           break;
         }
 
@@ -53,9 +54,10 @@ const ModuleActions = ({ moduleId, active, onUpdate }) => {
     } catch (error) {
       toast.error("Something went wrong: " + error?.message);
     } finally {
-      setAction(null); // Reset action after handling
+      setAction(null); // reset
     }
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <ButtonGroup>
@@ -81,4 +83,4 @@ const ModuleActions = ({ moduleId, active, onUpdate }) => {
   );
 };
 
-export default ModuleActions;
+export default LessonActions;

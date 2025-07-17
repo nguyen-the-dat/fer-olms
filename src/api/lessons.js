@@ -165,3 +165,16 @@ export async function updateLessonWatch({
     throw error;
   }
 }
+
+export async function getLessonById(id) {
+  try {
+    const lessonDetail = await fetch(
+      `${API_BASE_URL}/lessons/${id}?active=true`
+    );
+    const data = await lessonDetail.json();
+    return data;
+  } catch (error) {
+    console.error("get lesson detail error:", error.message);
+    throw error;
+  }
+}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
@@ -9,7 +9,9 @@ const CourseActions = ({ courseId, isActive, onUpdate }) => {
   const [action, setAction] = useState(null);
   const [published, setPublished] = useState(isActive);
   const navigate = useNavigate();
-
+  useEffect(() => {
+    setPublished(isActive);
+  }, [courseId, isActive]);
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

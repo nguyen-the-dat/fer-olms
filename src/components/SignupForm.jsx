@@ -24,11 +24,12 @@ export function SignupForm({ role }) {
       const allowedRoles = ["student", "instructor"];
       const userRole = allowedRoles.includes(role) ? role : "student";
 
-      const name = `${firstName} ${lastName}`;
+      // const name = `${firstName} ${lastName}`;
       const response = await registerUser({
         email,
         password,
-        name,
+        firstName,
+        lastName,
         role: userRole,
       });
 

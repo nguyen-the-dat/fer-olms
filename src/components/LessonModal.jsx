@@ -13,7 +13,7 @@ import { LessonTitleForm } from "./LessonTitleForm";
 import { LessonDescriptionForm } from "./LessonDescriptionForm";
 import { LessonAccessForm } from "./LessonAccessForm";
 import { VideoUrlForm } from "./VideoUrlForm";
-// import { LessonActions } from "./Lesso";
+import LessonActions from "./LessonAction";
 
 // IconBadge tự xây hoặc thay bằng <div className="d-flex align-items-center">Icon + Title</div>
 const IconBadge = ({ icon: Icon }) => (
@@ -30,11 +30,12 @@ export const LessonModal = ({
   moduleId,
   listLessons,
   setListLessons,
-  updateListLesson
+  updateListLesson,
 }) => {
   function postDelete() {
     setOpen(false);
   }
+
 
   return (
     <Modal
@@ -61,15 +62,14 @@ export const LessonModal = ({
                 <ArrowLeft size={16} className="me-2" />
                 Back to course setup
               </Button>
-              {/* <div className="d-flex justify-content-end">
+              <div className="d-flex justify-content-end">
                 <LessonActions
-                  lesson={lesson}
-                  moduleId={moduleId}
-                  onDelete={postDelete}
-                  listLessons={listLessons}
-                  setListLessons={setListLessons}
+                  lessonId={lesson?.id}
+                  active={lesson?.active}
+                  updateListLesson={updateListLesson}
                 />
-              </div> */}
+                {/* lessonId, active, onUpdate */}
+              </div>
             </Col>
           </Row>
 
@@ -116,6 +116,7 @@ export const LessonModal = ({
                 initialData={{
                   url: lesson?.video_url || "",
                   duration: lesson?.duration,
+                  playbackId: lesson?.playbackId,
                 }}
                 courseId={courseId}
                 lessonId={lesson?.id}

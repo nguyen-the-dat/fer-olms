@@ -17,6 +17,9 @@ import EditModuleDetailPage from "../pages/EditModuleDetailPage";
 import EnrollSucess from "../pages/EnrollSuccess";
 import ProtectedEnrollmentRoute from "../components/ProtectedEnrollmentRoute";
 import LearnCourseLayoutWrapper from "../components/LearnCourseLayoutWrapper";
+import AccountLayout from "../layouts/AccountLayout"
+import EditProfile from "../pages/Profile";
+import EnrolledCourse from "../components/EnrolledCourse";
 const AppRoutes = () => (
   <BrowserRouter>
     <Routes>
@@ -25,7 +28,10 @@ const AppRoutes = () => (
         <Route path="/" element={<Home />} />
         <Route path="/courses" element={<CoursePage />} />
         <Route path="/courses/:id" element={<SingleCoursePage />} />
-        <Route path="/account" element={<Profile />} />
+        <Route path="/account" element={<AccountLayout />}>
+          <Route index element={<EditProfile />} />
+          <Route path="enrolled-courses" element={<EnrolledCourse/>}/>
+        </Route>
         <Route path="/enroll-success" element={<EnrollSucess />} />
         {/* Course Enroll */}
 

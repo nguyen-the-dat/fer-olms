@@ -6,6 +6,7 @@ import * as z from "zod";
 import { toast } from "react-toastify";
 import { createNewTestimonials, hasReviewed } from "../api/testimonials";
 import { useAuth } from "../context/AuthContext";
+
 const formSchema = z.object({
   rating: z.coerce
     .number()
@@ -16,6 +17,7 @@ const formSchema = z.object({
 
 const ReviewModal = ({ show, onHide, courseId }) => {
   const { user } = useAuth();
+
   const {
     register,
     handleSubmit,
@@ -26,24 +28,29 @@ const ReviewModal = ({ show, onHide, courseId }) => {
   });
 
   const onSubmit = async (values) => {
-    const reviewed = await hasReviewed(user.id, courseId);
+    try {
+      const reviewed = await hasReviewed(user.id, courseId);
 
-    if (reviewed) {
-      toast.error("You have already submitted a review for this course.");
-      return;
-    }
+      if (reviewed) {
+        toast.error("You have already submitted a review for this course.");
+        return;
+      }
 
-    const result = await createNewTestimonials({
-      ...values,
-      userId: user.id,
-      courseId: courseId,
-    });
+      const result = await createNewTestimonials({
+        ...values,
+        user, // gửi cả object user
+        courseId,
+      });
 
-    if (result) {
-      toast.success("Review added");
-      onHide();
-    } else {
-      toast.error("Something went wrong");
+      if (result) {
+        toast.success("Review added");
+        onHide();
+      } else {
+        toast.error("Something went wrong");
+      }
+    } catch (error) {
+      toast.error("Failed to submit review");
+      console.error(error);
     }
   };
 

@@ -4,7 +4,7 @@ import { Form, Button, Spinner } from "react-bootstrap";
 import { Pencil } from "lucide-react";
 import { toast } from "react-toastify";
 import { updateLesson } from "../api/lessons";
-import { VideoPlayer } from "./VideoPlayer";
+import VideoPlayer from "./VideoPlayer";
 
 export const VideoUrlForm = ({ initialData, lessonId, updateListLesson }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -23,11 +23,16 @@ export const VideoUrlForm = ({ initialData, lessonId, updateListLesson }) => {
 
   const onSubmit = async (data) => {
     const file = data.video?.[0];
-    if (!file) return toast.error("Please select a video");
+    if (!file) {
+      toast.error("Please select a video file");
+      return;
+    }
 
     try {
       setIsUploading(true);
+      toast.info("📤 Uploading video...");
 
+      // 1. Create MUX upload
       const resUpload = await fetch(
         "http://localhost:3005/api/mux/create-upload",
         {
@@ -38,6 +43,7 @@ export const VideoUrlForm = ({ initialData, lessonId, updateListLesson }) => {
 
       const { uploadUrl, uploadId } = await resUpload.json();
 
+      // 2. Upload video file to MUX
       const uploadRes = await fetch(uploadUrl, {
         method: "PUT",
         headers: { "Content-Type": file.type },
@@ -45,10 +51,12 @@ export const VideoUrlForm = ({ initialData, lessonId, updateListLesson }) => {
       });
 
       if (!uploadRes.ok) throw new Error("Upload failed");
+
       toast.info("⏳ Video is processing...");
 
+      // 3. Polling MUX asset status
       let asset = null;
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 20; i++) {
         const resAsset = await fetch(
           `http://localhost:3005/api/mux/asset/${uploadId}`
         );
@@ -60,26 +68,28 @@ export const VideoUrlForm = ({ initialData, lessonId, updateListLesson }) => {
 
         const assetData = await resAsset.json();
 
-        if (assetData?.playbackId) {
-          asset = assetData;
+        if (assetData?.playback_ids?.[0]?.id) {
+          const playbackId = assetData.playback_ids[0].id;
+          asset = { playbackId }; 
           break;
         }
 
         await new Promise((res) => setTimeout(res, 3000));
       }
-
+      console.log("asset", asset);
       if (!asset) throw new Error("Timeout: Asset not ready");
 
+      // 4. Save to lesson
       const playbackId = asset.playbackId;
-
       const updatedLesson = await updateLesson(lessonId, { playbackId });
       updateListLesson(updatedLesson);
       setVideoData({ playbackId });
+
       toast.success("🎉 Video uploaded and saved");
       toggleEdit();
     } catch (err) {
       console.error(err);
-      toast.error("❌ Upload failed");
+      toast.error("❌ Upload failed: " + err.message);
     } finally {
       setIsUploading(false);
     }
@@ -87,6 +97,7 @@ export const VideoUrlForm = ({ initialData, lessonId, updateListLesson }) => {
 
   return (
     <div className="border rounded p-3 bg-light mt-4">
+      {/* Header */}
       <div className="d-flex justify-content-between align-items-center mb-2">
         <strong>Video</strong>
         <Button variant="outline-secondary" size="sm" onClick={toggleEdit}>
@@ -94,18 +105,21 @@ export const VideoUrlForm = ({ initialData, lessonId, updateListLesson }) => {
             "Cancel"
           ) : (
             <>
-              <Pencil size={16} className="me-1" /> Edit Video
+              <Pencil size={16} className="me-1" />
+              Edit Video
             </>
           )}
         </Button>
       </div>
 
+      {/* Video Player (non-edit mode) */}
       {!isEditing && videoData.playbackId && (
         <div className="mt-3">
           <VideoPlayer playbackId={videoData.playbackId} />
         </div>
       )}
 
+      {/* Upload Form (edit mode) */}
       {isEditing && (
         <Form onSubmit={handleSubmit(onSubmit)} className="mt-3">
           <Form.Group className="mb-3">
@@ -120,7 +134,8 @@ export const VideoUrlForm = ({ initialData, lessonId, updateListLesson }) => {
           <Button type="submit" disabled={isUploading}>
             {isUploading ? (
               <>
-                <Spinner animation="border" size="sm" /> Uploading...
+                <Spinner animation="border" size="sm" className="me-2" />
+                Uploading...
               </>
             ) : (
               "Upload"
@@ -131,3 +146,5 @@ export const VideoUrlForm = ({ initialData, lessonId, updateListLesson }) => {
     </div>
   );
 };
+
+export default VideoUrlForm;

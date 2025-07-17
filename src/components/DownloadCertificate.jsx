@@ -1,14 +1,28 @@
 import { PDFDocument, rgb } from "pdf-lib";
 import { saveAs } from "file-saver";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Container, Row, Col } from "react-bootstrap";
 import { useProgress } from "../context/ProgressContext";
-
+import { fetchCourseById } from "../api/courses";
+import { useAuth } from "../context/AuthContext";
 const fontkit = await import("fontkit");
 
-const DownloadCertificate = () => {
+const DownloadCertificate = ({ courseId }) => {
+  const [courseInfo, setCourseInfo] = useState(null);
   const { totalProgress } = useProgress();
+  const {user} = useAuth();
+  useEffect(() => {
+    async function getCourse() {
+      try {
+        const course = await fetchCourseById(courseId);
+        setCourseInfo(course);
+      } catch (error) {
+        console.error("error while fetching course detail", error);
+      }
+    }
 
+    getCourse();
+  });
   const handleDownload = async () => {
     if (totalProgress < 100) {
       alert("Bạn cần hoàn thành 100% tiến độ trước khi tải chứng chỉ.");
@@ -16,11 +30,14 @@ const DownloadCertificate = () => {
     }
 
     try {
+      const now = new Date();
+      const completionDate = now.toLocaleDateString("vi-VN"); 
+
       const completionInfo = {
-        name: "Marrtin nathann",
-        completionDate: "14/07/2025",
-        courseName: "Khóa học Lập trình React",
-        instructor: "Trần Văn B",
+        name: `${user?.firstName} ${user?.lastName}`,
+        completionDate: completionDate,
+        courseName: courseInfo?.title,
+        instructor: courseInfo?.instructor?.name,
         instructorDesignation: "Giảng viên chính",
         sign: "/sign.png",
       };

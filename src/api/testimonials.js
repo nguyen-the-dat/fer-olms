@@ -35,3 +35,20 @@ export const hasReviewed = async (userId, courseId) => {
     return false;
   }
 };
+
+export const getTestimonialsByCourseId = async (courseId) => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/testimonials?courseId=${courseId}`);
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch testimonials");
+    }
+
+    const testimonials = await response.json();
+    return testimonials;
+  } catch (error) {
+    console.error("Error fetching testimonials by courseId:", error);
+    return [];
+  }
+};
+

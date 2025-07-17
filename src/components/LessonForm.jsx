@@ -1,5 +1,3 @@
-
-
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -113,6 +111,13 @@ export const LessonForm = ({
     setIsEditing(true);
   };
 
+  const handleUpdateLesson = (updatedValues) => {
+    setLessons((prev) => ({
+      ...prev,
+      ...updatedValues,
+    }));
+  };
+
   return (
     <Card className="mt-4 border">
       <Card.Body>
@@ -184,6 +189,7 @@ export const LessonForm = ({
         listLessons={lessons}
         setListLessons={setLessons}
         updateListLesson={onUpdateLessons}
+      
       />
     </Card>
   );

@@ -98,7 +98,7 @@ const CourseSidebar = ({ courseId }) => {
         <GiveReview courseId={courseId} />
         <DownloadCertificate
           courseId={courseId}
-          totalProgress={totalProgress}
+         
         />
       </div>
     </div>
@@ -107,82 +107,3 @@ const CourseSidebar = ({ courseId }) => {
 
 export default CourseSidebar;
 
-// import { Container, Row, Col, Card } from "react-bootstrap";
-// // import CourseProgress from "./CourseProgress";
-// // import SidebarModule from "./SidebarModule";
-// // import Quiz from "./Quiz";
-// // import GiveReview from "./GiveReview";
-// // import DownloadCertificate from "./DownloadCertificate";
-// import { CourseProgress } from "../components/CourseProgress";
-// import { useEffect, useState } from "react";
-// import { fetchCourseById } from "../api/courses";
-// const CourseSidebar = ({
-//   course,
-//   totalProgress,
-//   courseId,
-//   updateDataModules,
-//   quizSet,
-//   isQuizComplete,
-// }) => {
-//   const [courseDetail, setCourseDetail] = useState(null);
-
-//   useEffect(() => {
-//     async function getCourseData() {
-//       try {
-//         const course = await fetchCourseById(courseId);
-//         setCourseDetail(course);
-//       } catch (error) {
-//         console.error("Lỗi khi lấy thông tin khóa học:", error);
-//       }
-//     }
-
-//     if (courseId) {
-//       getCourseData();
-//     }
-//   }, [courseId]);
-
-//   return (
-//     <div
-//       className="d-flex flex-column border-end shadow-sm"
-//       style={{ height: "100vh", overflowY: "auto" }}
-//     >
-//       {/* Course title & progress */}
-//       <div className="border-bottom p-4">
-//         <h5 className="fw-semibold mb-0">{courseDetail?.title}</h5>
-//         <div className="mt-4">
-//           <CourseProgress variant="success" value={100} />
-//         </div>
-//       </div>
-
-//       {/* Sidebar modules */}
-//       {/* <div className="px-3">
-//         <SidebarModule courseId={courseId} modules={updateDataModules} />
-//       </div> */}
-
-//       {/* Quiz */}
-//       {/* <div className="border-top px-4 pt-4">
-//         {quizSet && (
-//           <Quiz
-//             courseId={courseId}
-//             quizSet={quizSet}
-//             isTaken={isQuizComplete}
-//           />
-//         )}
-//       </div> */}
-
-//       {/* Review & Certificate */}
-//       {/* <div className="px-4 pt-4">
-//         <GiveReview />
-//         <DownloadCertificate
-//           courseId={courseId}
-//           totalProgress={totalProgress}
-//         />
-//       </div> */}
-
-//       {/* Optional bottom padding */}
-//       <div className="px-4 mb-5" />
-//     </div>
-//   );
-// };
-
-// export default CourseSidebar;
